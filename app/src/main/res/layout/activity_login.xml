@@ -18,31 +18,52 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login Account"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="28sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email ID"
+                android:textSize="20sp"/>
 
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_border"
-                android:hint="Username"
                 android:textSize="20sp"
                 android:padding="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="12dp"
                 android:inputType="text" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
 
             <FrameLayout
                 android:id="@+id/passwordTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_border"
-                android:hint="Password">
+                >
 
                 <EditText
-                    android:id="@+id/passwordEditText"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:background="@drawable/edittext_border"
                     android:textSize="20sp"
                     android:padding="6dp"
                     android:inputType="textPassword" />
@@ -74,6 +95,15 @@
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="@color/primary_btn"
                 android:text="Login" />
+
+            <TextView
+                android:id="@+id/forget_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Forgot password? Click here"
+                android:textColor="@color/secondary_theme"
+                android:gravity="center"
+                android:layout_margin="12dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
