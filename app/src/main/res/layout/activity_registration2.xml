@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration2Activity"
+    android:padding="16dp"
+    android:gravity="center|top"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Unnati"
+        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complete your profile and become a\nverified user!"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact"
+        android:layout_marginBottom="4dp"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/contact_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_border"
+        android:textSize="20sp"
+        android:padding="12dp"
+        android:layout_marginBottom="28dp"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact"
+        android:layout_marginBottom="4dp"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_border"
+        android:textSize="20sp"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:inputType="text" />
+
+
+    <Button
+        android:id="@+id/verify_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:paddingHorizontal="40dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/primary_btn"
+        android:text="Verify"
+        android:textAllCaps="false"/>
+
+
+</LinearLayout>
