@@ -24,17 +24,17 @@ public class RegistrationActivity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
 
-        contact_number= findViewById(R.id.contact_number);
-        send_otp= findViewById(R.id.send_otp);
-        if(contact_number.getText().toString().trim().length()==10) {
-            send_otp.setOnClickListener(v -> {
+        contact_number = findViewById(R.id.contact_number);
+        send_otp = findViewById(R.id.send_otp);
+        send_otp.setOnClickListener(v -> {
+            if (contact_number.getText().toString().trim().length() == 10) {
                 Intent intent = new Intent(this, Registration2Activity.class);
                 intent.putExtra("contact", contact_number.getText().toString().trim());
                 startActivity(intent);
-            });
-        }else{
-            contact_number.setError("Enter the 10 Digit");
-        }
+            } else {
+                contact_number.setError("Enter the 10 Digit");
+            }
+        });
 
     }
 }

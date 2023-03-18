@@ -1,214 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     tools:context=".MainActivity">
-    <ScrollView
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingVertical="10dp">
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="16dp"
-                app:cardCornerRadius="12dp"
-                android:elevation="4dp">
+        android:layout_height="match_parent"
+        android:id="@+id/container"
+        android:layout_above="@id/bottom_navigation"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        android:background="@drawable/grey_border_curved"
+        app:itemIconTint="@drawable/item_color_selector"
+        app:itemTextColor="@color/primary_theme"/>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:src="@drawable/startup1"
-                        android:scaleType="centerCrop"/>
+</RelativeLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="Startup 1 - The startup of startup"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:orientation="vertical"-->
+<!--    tools:context=".MainActivity">-->
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical"-->
+<!--            android:paddingVertical="10dp">-->
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginHorizontal="16dp"-->
+<!--                app:cardCornerRadius="12dp"-->
+<!--                android:elevation="4dp">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="This is a startup about a startup but we dont know how to startup so we are just starting up."
-                        android:textColor="#3E5560"
-                        android:paddingBottom="10dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="16dp"
-                app:cardCornerRadius="12dp"
-                android:elevation="4dp">
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="160dp"-->
+<!--                        android:src="@drawable/startup1"-->
+<!--                        android:scaleType="centerCrop"/>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="Startup 1 - The startup of startup"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:textStyle="bold"/>-->
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:src="@drawable/startup2"
-                        android:scaleType="centerCrop"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="This is a startup about a startup but we dont know how to startup so we are just starting up."-->
+<!--                        android:textColor="#3E5560"-->
+<!--                        android:paddingBottom="10dp"/>-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="CU Motorz - The affordable electric"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginHorizontal="16dp"-->
+<!--                app:cardCornerRadius="12dp"-->
+<!--                android:elevation="4dp">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="Our aim is to make affordable electric vehicles for the indian consumers. The future is electric and so are we.."
-                        android:textColor="#3E5560"
-                        android:paddingBottom="10dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="16dp"
-                app:cardCornerRadius="12dp"
-                android:elevation="4dp">
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="160dp"-->
+<!--                        android:src="@drawable/startup2"-->
+<!--                        android:scaleType="centerCrop"/>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="CU Motorz - The affordable electric"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:textStyle="bold"/>-->
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:src="@drawable/startup3"
-                        android:scaleType="centerCrop"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="Our aim is to make affordable electric vehicles for the indian consumers. The future is electric and so are we.."-->
+<!--                        android:textColor="#3E5560"-->
+<!--                        android:paddingBottom="10dp"/>-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="Boomy - The Indian music streaming app."
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginHorizontal="16dp"-->
+<!--                app:cardCornerRadius="12dp"-->
+<!--                android:elevation="4dp">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="The place for indian talent to showcase their musical skills. Create your music and upload on boomy to reach the masses. Let your music be heard."
-                        android:textColor="#3E5560"
-                        android:paddingBottom="10dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="16dp"
-                app:cardCornerRadius="12dp"
-                android:elevation="4dp">
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="160dp"-->
+<!--                        android:src="@drawable/startup3"-->
+<!--                        android:scaleType="centerCrop"/>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="Boomy - The Indian music streaming app."-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:textStyle="bold"/>-->
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:src="@drawable/startup4"
-                        android:scaleType="centerCrop"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="The place for indian talent to showcase their musical skills. Create your music and upload on boomy to reach the masses. Let your music be heard."-->
+<!--                        android:textColor="#3E5560"-->
+<!--                        android:paddingBottom="10dp"/>-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="Worksheet Union - A place to get all the worksheets."
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginHorizontal="16dp"-->
+<!--                app:cardCornerRadius="12dp"-->
+<!--                android:elevation="4dp">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="Our startup aims to provide ready-made worksheets to students at a very affordable rates. So no more worries about deadlines of worksheets."
-                        android:textColor="#3E5560"
-                        android:paddingBottom="10dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="16dp"
-                app:cardCornerRadius="12dp"
-                android:elevation="4dp">
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="160dp"-->
+<!--                        android:src="@drawable/startup4"-->
+<!--                        android:scaleType="centerCrop"/>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="Worksheet Union - A place to get all the worksheets."-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:textStyle="bold"/>-->
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:src="@drawable/startup5"
-                        android:scaleType="centerCrop"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="Our startup aims to provide ready-made worksheets to students at a very affordable rates. So no more worries about deadlines of worksheets."-->
+<!--                        android:textColor="#3E5560"-->
+<!--                        android:paddingBottom="10dp"/>-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="CU Cab - A cab service for going to college"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginHorizontal="16dp"-->
+<!--                app:cardCornerRadius="12dp"-->
+<!--                android:elevation="4dp">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="16dp"
-                        android:text="Why use Auto when you can have comfortable rides to your college at affordable rates. Just book our cabs and they will pick you up right from your flats or pgs."
-                        android:textColor="#3E5560"
-                        android:paddingBottom="10dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-    </ScrollView>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
 
-</LinearLayout>
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="160dp"-->
+<!--                        android:src="@drawable/startup5"-->
+<!--                        android:scaleType="centerCrop"/>-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="CU Cab - A cab service for going to college"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:textStyle="bold"/>-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginStart="16dp"-->
+<!--                        android:text="Why use Auto when you can have comfortable rides to your college at affordable rates. Just book our cabs and they will pick you up right from your flats or pgs."-->
+<!--                        android:textColor="#3E5560"-->
+<!--                        android:paddingBottom="10dp"/>-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+
+<!--</LinearLayout>-->
