@@ -60,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_border"
+                android:padding="2dp"
                 >
 
                 <EditText
@@ -68,7 +69,8 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:padding="6dp"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:background="@drawable/white_border"/>
 
                 <ImageView
                     android:id="@+id/passwordToggleImageView"
