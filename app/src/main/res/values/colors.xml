@@ -14,5 +14,5 @@
     <color name="primary_theme">#FFff8800</color>
     <color name="primary_theme_lite">#FFffd699</color>
     <color name="secondary_theme">#FF308674</color>
-    <color name="secondary_theme_lite">#FF99ff99</color>
+    <color name="secondary_theme_lite">#FFabe7cf</color>
 </resources>
