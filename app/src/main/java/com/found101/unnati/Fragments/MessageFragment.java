@@ -28,6 +28,7 @@ public class MessageFragment extends Fragment {
         message_recycler.setLayoutManager(linearLayoutManager);
 
         MessageAdapter messageAdapter=new MessageAdapter();
+        message_recycler.setAdapter(messageAdapter);
 
         return view;
     }

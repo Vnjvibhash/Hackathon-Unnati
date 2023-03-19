@@ -3,6 +3,7 @@ package com.found101.unnati.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -29,7 +30,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView user_name,user_message,message_time,message_status;
+        TextView user_name,user_message,message_time;
+        ImageView message_status;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             user_name = itemView.findViewById(R.id.user_name);

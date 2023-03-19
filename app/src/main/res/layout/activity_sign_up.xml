@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/login_bg"
     android:gravity="center"
     android:padding="16dp"
@@ -12,7 +12,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_txt"
         android:layout_centerInParent="true"
+        android:layout_marginBottom="40dp"
         android:elevation="20dp"
         app:cardCornerRadius="50dp">
 
@@ -35,43 +37,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Email ID"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_border"
-                android:textSize="20sp"
-                android:padding="8dp"
                 android:layout_marginBottom="12dp"
-                android:inputType="text" />
+                android:background="@drawable/edittext_border"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textSize="20sp" />
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Password"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <FrameLayout
                 android:id="@+id/passwordTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_border"
-                android:padding="2dp"
-                >
+                android:padding="2dp">
 
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/white_border"
-                    android:textSize="20sp"
-                    android:padding="6dp"
                     android:inputType="textPassword"
-                    />
+                    android:padding="6dp"
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:id="@+id/passwordToggleImageView"
@@ -86,22 +85,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|end"
-                    android:visibility="gone"
                     android:padding="8dp"
-                    android:src="@drawable/ic_password" />
-
+                    android:src="@drawable/ic_password"
+                    android:visibility="gone" />
             </FrameLayout>
-
 
             <Button
                 android:id="@+id/register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="28dp"
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="@color/primary_btn"
                 android:text="Create Account"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/google_btn"
@@ -109,23 +107,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginHorizontal="24dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/white"
+                android:shadowColor="@color/black"
                 android:text="Continue With Google"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
-                android:shadowColor="@color/black"
-                android:backgroundTint="@color/white"
-                app:strokeColor="@color/black"
+                app:cornerRadius="50dp"
                 app:icon="@drawable/ic_google"
+                app:iconGravity="textStart"
                 app:iconTint="@color/design_default_color_background"
                 app:iconTintMode="multiply"
-                app:iconGravity="textStart"
-                app:cornerRadius="50dp"/>
+                app:strokeColor="@color/black" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:id="@+id/bottom_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Already have an account?"
@@ -141,3 +141,135 @@
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:elevation="20dp"-->
+<!--        app:cardCornerRadius="50dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="20dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Create Account"-->
+<!--                android:textStyle="bold"-->
+<!--                android:gravity="center"-->
+<!--                android:textSize="28sp"-->
+<!--                android:layout_marginVertical="10dp"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Email ID"-->
+<!--                android:textSize="20sp"/>-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/username"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_border"-->
+<!--                android:textSize="20sp"-->
+<!--                android:padding="8dp"-->
+<!--                android:layout_marginBottom="12dp"-->
+<!--                android:inputType="text" />-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Password"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="20sp"/>-->
+
+<!--            <FrameLayout-->
+<!--                android:id="@+id/passwordTextInputLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_border"-->
+<!--                android:padding="2dp"-->
+<!--                >-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/password"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/white_border"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:padding="6dp"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/passwordToggleImageView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|end"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:src="@drawable/ic_password_toggle" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/passwordImageView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|end"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:src="@drawable/ic_password" />-->
+
+<!--            </FrameLayout>-->
+
+
+<!--            <Button-->
+<!--                android:id="@+id/register"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="16dp"-->
+<!--                android:background="@drawable/rounded_button"-->
+<!--                android:backgroundTint="@color/primary_btn"-->
+<!--                android:text="Create Account"-->
+<!--                android:textAllCaps="false"/>-->
+
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/google_btn"-->
+<!--                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginHorizontal="24dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:text="Continue With Google"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:shadowColor="@color/black"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                app:strokeColor="@color/black"-->
+<!--                app:icon="@drawable/ic_google"-->
+<!--                app:iconTint="@color/design_default_color_background"-->
+<!--                app:iconTintMode="multiply"-->
+<!--                app:iconGravity="textStart"-->
+<!--                app:cornerRadius="50dp"/>-->
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Already have an account?"-->
+<!--        android:layout_above="@+id/sign_in"-->
+<!--        android:gravity="center"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/sign_in"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="SignIn"-->
+<!--        android:textColor="@color/secondary_theme"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_alignParentBottom="true"/>-->
+
+<!--</RelativeLayout>-->

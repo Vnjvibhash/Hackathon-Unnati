@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:elevation="8dp"
-    app:cardCornerRadius="20dp">
+    app:cardCornerRadius="20dp"
+    android:id="@+id/chat"
+    android:layout_marginBottom="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,12 +16,12 @@
         android:orientation="horizontal"
         android:weightSum="4">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/avtar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/logo" />
+            android:src="@drawable/img" />
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -48,7 +51,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:gravity="start|center"
-                    android:paddingEnd="50dp"
+                    android:paddingEnd="80dp"
                     android:singleLine="true"
                     android:text="Hello guys this app is developed by Vivek and Amit."
                     android:textColor="@color/grey"
@@ -66,12 +69,14 @@
                     android:id="@+id/message_time"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_alignParentRight="true"
                     android:layout_weight="1"
-                    android:paddingHorizontal="4dp"
+                    android:paddingEnd="8dp"
                     android:text="5 min"
+                    android:gravity="start|center"
+                    android:layout_marginEnd="8dp"
                     android:textColor="@color/primary_theme"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="RtlSymmetry" />
 
                 <ImageView
                     android:id="@+id/message_status"
@@ -79,7 +84,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_done_all"
-                    app:tint="@color/secondary_theme_lite" />
+                    app:tint="@color/primary_theme" />
             </LinearLayout>
 
         </RelativeLayout>
