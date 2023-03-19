@@ -69,19 +69,20 @@ public class LoginActivity extends AppCompatActivity {
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
-                if (username.equals("admin") && password.equals("password")) {
-                    Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+//                if (username.equals("admin") && password.equals("password")) {
+                    Intent intent = new Intent(LoginActivity.this, ChatActivity.class);
                     startActivity(intent);
-                } else {
-                    Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-                }
+//                } else {
+//                    Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, UserTypeActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
