@@ -20,7 +20,7 @@ public class UserTypeActivity extends AppCompatActivity {
             Intent intent=new Intent(this,SignUpActivity.class);
             startActivity(intent);
         });
-        
+
         btnEntrepreneur.setOnClickListener(v->{
             Intent intent=new Intent(this,SignUpActivity.class);
             startActivity(intent);
