@@ -6,4 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".Activities.ChatActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="@color/white"
+            app:title="Chat with Investor"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Chat messages -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chat_messages"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="16dp" />
+
+            <!-- Chat input -->
+            <LinearLayout
+                android:id="@+id/chat_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/message_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edittext_border"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:hint="Type your message here..."
+                    android:layout_margin="6dp"
+                    />
+
+                <Button
+                    android:id="@+id/send_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_margin="6dp"
+                    android:text="Send" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
