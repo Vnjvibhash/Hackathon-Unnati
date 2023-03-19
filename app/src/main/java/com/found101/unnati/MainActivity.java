@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavigationView  = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
 
@@ -41,18 +41,15 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
                         return true;
-
                     case R.id.message:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, messageFragment).commit();
                         return true;
-
                     case R.id.profile:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
                         return true;
-             case R.id.notification:
+                    case R.id.notification:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, notificationFragment).commit();
                         return true;
-
                     case R.id.setting:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, settingFragment).commit();
                         return true;

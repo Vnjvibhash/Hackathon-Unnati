@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText usernameEditText;
     private EditText passwordEditText;
     Button loginButton;
+    TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordToggleImageView = findViewById(R.id.passwordToggleImageView);
         passwordImageView = findViewById(R.id.passwordImageView);
 
-        passwordToggleImageView.setOnClickListener(v->{
+        passwordToggleImageView.setOnClickListener(v -> {
             passwordToggleImageView.setVisibility(View.GONE);
             passwordImageView.setVisibility(View.VISIBLE);
             if (passwordEditText.getTransformationMethod() instanceof PasswordTransformationMethod) {
@@ -47,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
             }
             passwordEditText.setSelection(passwordEditText.getText().length());
         });
-        passwordImageView.setOnClickListener(v->{
+        passwordImageView.setOnClickListener(v -> {
             passwordImageView.setVisibility(View.GONE);
             passwordToggleImageView.setVisibility(View.VISIBLE);
             if (passwordEditText.getTransformationMethod() instanceof PasswordTransformationMethod) {
@@ -59,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         loginButton = findViewById(R.id.login);
+        register = findViewById(R.id.register);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +74,13 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, UserTypeActivity.class);
+                startActivity(intent);
             }
         });
     }
