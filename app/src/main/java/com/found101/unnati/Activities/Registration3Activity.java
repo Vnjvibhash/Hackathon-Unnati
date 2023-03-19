@@ -1,4 +1,4 @@
-package com.found101.unnati;
+package com.found101.unnati.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.found101.unnati.R;
 
 public class Registration3Activity extends AppCompatActivity {
     RadioGroup radioGroup;

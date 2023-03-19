@@ -1,4 +1,4 @@
-package com.found101.unnati;
+package com.found101.unnati.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
+
+import com.found101.unnati.R;
 
 public class SplashActivity extends AppCompatActivity {
     TextView app_name;

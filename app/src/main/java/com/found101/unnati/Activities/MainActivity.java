@@ -1,4 +1,4 @@
-package com.found101.unnati;
+package com.found101.unnati.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +11,7 @@ import com.found101.unnati.Fragments.MessageFragment;
 import com.found101.unnati.Fragments.NotificationFragment;
 import com.found101.unnati.Fragments.ProfileFragment;
 import com.found101.unnati.Fragments.SettingFragment;
+import com.found101.unnati.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

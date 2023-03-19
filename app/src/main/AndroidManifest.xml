@@ -13,33 +13,33 @@
         android:theme="@style/Theme.Unnati"
         tools:targetApi="31">
         <activity
-            android:name=".UserTypeActivity"
+            android:name=".Activities.UserTypeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Registration3Activity"
+            android:name=".Activities.Registration3Activity"
             android:exported="false" />
         <activity
-            android:name=".Registration2Activity"
+            android:name=".Activities.Registration2Activity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".Activities.RegistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Activities.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activities.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,7 +52,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

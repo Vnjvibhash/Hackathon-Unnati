@@ -1,10 +1,12 @@
-package com.found101.unnati;
+package com.found101.unnati.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.found101.unnati.R;
 
 public class UserTypeActivity extends AppCompatActivity {
     Button btnInvestor,btnEntrepreneur;
