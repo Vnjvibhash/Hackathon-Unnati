@@ -17,6 +17,13 @@
         android:theme="@style/Theme.Unnati"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.CreatPostActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activities.InvestorProfile"
             android:exported="false">
             <meta-data

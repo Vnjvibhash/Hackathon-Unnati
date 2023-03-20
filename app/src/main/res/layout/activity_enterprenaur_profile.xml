@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Justin Bieber"
+                android:text="Unnati Singh"
                 android:gravity="center"
                 android:textSize="28dp"
                 android:textStyle="bold"
@@ -73,22 +73,40 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Location:"
-            android:layout_gravity="left"
-            android:textStyle="bold"
-            android:textSize="16dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="36dp"/>
-
-        <EditText
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/edittext_border"
-            android:layout_marginHorizontal="32dp"
-            />
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_marginTop="32dp"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New Idea"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"/>
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="Location:"-->
+<!--            android:layout_gravity="left"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="16dp"-->
+<!--            android:layout_marginLeft="32dp"-->
+<!--            android:layout_marginTop="36dp"/>-->
+
+
+
+<!--        <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:background="@drawable/edittext_border"-->
+<!--            android:layout_marginHorizontal="32dp"-->
+<!--            />-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -188,6 +206,8 @@
 
             </LinearLayout>
         </ScrollView>
+
+
 
 
     </LinearLayout>
