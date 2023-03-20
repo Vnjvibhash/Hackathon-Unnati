@@ -14,12 +14,16 @@ import com.found101.unnati.Adapters.ChatAdapter;
 import com.found101.unnati.Models.ChatModel;
 import com.found101.unnati.R;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ChatActivity extends AppCompatActivity {
 
-
+    String currentTime;
     List<ChatModel> messageChatModelList =  new ArrayList<>();
     RecyclerView recyclerView;
     ChatAdapter adapter ;
@@ -39,15 +43,12 @@ public class ChatActivity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
 
-
-        messageET = (EditText)findViewById(R.id.messageET);
+        messageET = findViewById(R.id.messageET);
         sendBtn = (ImageView) findViewById(R.id.sendBtn);
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         LinearLayoutManager manager = new LinearLayoutManager(ChatActivity.this, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
-
-
 
         ChatModel model1 = new ChatModel(
                 "Hello. How are you today?",
@@ -93,10 +94,10 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String msg = messageET.getText().toString();
-
+                currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
                 ChatModel model = new ChatModel(
                         msg,
-                        "10:00 PM",
+                        currentTime,
                         0
                 );
                 messageChatModelList.add(model);

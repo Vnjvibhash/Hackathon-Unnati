@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".Activities.ChatActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +17,7 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginTop="45dp"
             android:background="@color/primary_theme">
 
             <LinearLayout
@@ -60,17 +60,10 @@
                     android:gravity="end">
 
                     <ImageView
-                        android:layout_width="40dp"
+                        android:layout_width="52dp"
                         android:layout_height="match_parent"
                         android:padding="10dp"
-                        android:src="@drawable/phone"
-                        app:tint="@color/white"/>
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:src="@drawable/menu64"
+                        android:src="@drawable/ic_calendar"
                         app:tint="@color/white"/>
                 </LinearLayout>
 
@@ -82,13 +75,13 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
         </RelativeLayout>
+
     </LinearLayout>
 
     <LinearLayout

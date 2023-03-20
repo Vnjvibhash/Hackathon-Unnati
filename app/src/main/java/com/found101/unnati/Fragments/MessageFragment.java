@@ -16,6 +16,7 @@ import com.found101.unnati.R;
 public class MessageFragment extends Fragment {
     View view;
     RecyclerView message_recycler;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

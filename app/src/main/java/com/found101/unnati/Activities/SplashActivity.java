@@ -13,7 +13,7 @@ import com.found101.unnati.R;
 
 public class SplashActivity extends AppCompatActivity {
     TextView app_name;
-    private static int SPLASH_TIME_OUT = 2000;
+    private static int SPLASH_TIME_OUT = 1000;
     private static int SPLASH_TIME_OUT_HINDI = 2000;
 
     @Override

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "47340808877",
+    "project_id": "found-2f8ae",
+    "storage_bucket": "found-2f8ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47340808877:android:8de4e6862478afc3aa7424",
+        "android_client_info": {
+          "package_name": "com.found101.unnati"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47340808877-ui03hi5q76h3eo0p8krq4sjir68egl8l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.found101.unnati",
+            "certificate_hash": "c05e2b48c10f2e9c1cbe042e71e297c43b88e535"
+          }
+        },
+        {
+          "client_id": "47340808877-goob8mviqc6bhm0obue5cgmkcg9g320e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk3JtaUdxfuU_Vexbr8lIaKq1MOqyuzdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47340808877-goob8mviqc6bhm0obue5cgmkcg9g320e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

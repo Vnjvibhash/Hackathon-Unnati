@@ -57,14 +57,14 @@
         android:textSize="20sp"/>
 
     <EditText
-        android:id="@+id/otp"
+        android:id="@+id/editOtp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext_border"
         android:textSize="20sp"
         android:padding="12dp"
         android:layout_marginBottom="12dp"
-        android:inputType="text" />
+        android:inputType="number" />
 
 
     <Button
