@@ -29,7 +29,7 @@ public class ChatActivity extends AppCompatActivity {
     ChatAdapter adapter ;
 
     EditText messageET;
-    ImageView sendBtn;
+    ImageView sendBtn,back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class ChatActivity extends AppCompatActivity {
 
         messageET = findViewById(R.id.messageET);
         sendBtn = (ImageView) findViewById(R.id.sendBtn);
+        back = findViewById(R.id.back);
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         LinearLayoutManager manager = new LinearLayoutManager(ChatActivity.this, RecyclerView.VERTICAL, false);
@@ -107,6 +108,10 @@ public class ChatActivity extends AppCompatActivity {
 
 
             }
+        });
+
+        back.setOnClickListener(v->{
+            onBackPressed();
         });
 
     }
