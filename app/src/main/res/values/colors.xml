@@ -10,6 +10,7 @@
     <color name="grey">#FF777777</color>
     <color name="grey_light">#FFF3F3F3</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#FFFF0000</color>
     <color name="primary_btn">#FFFE8100</color>
     <color name="primary_theme">#FFff8800</color>
     <color name="primary_theme_lite">#FFffd699</color>

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.found101.unnati.Fragments.FeedFragment;
 import com.found101.unnati.Fragments.HomeFragment;
 import com.found101.unnati.Fragments.MessageFragment;
 import com.found101.unnati.Fragments.NotificationFragment;
@@ -18,18 +19,21 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    String role;
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment = new HomeFragment();
     MessageFragment messageFragment = new MessageFragment();
-    ProfileFragment profileFragment = new ProfileFragment();
+    FeedFragment feedFragment = new FeedFragment();
     NotificationFragment notificationFragment = new NotificationFragment();
+    ProfileFragment profileFragment = new ProfileFragment();
     SettingFragment settingFragment = new SettingFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        role=getIntent().getStringExtra("Role");
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -45,14 +49,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.message:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, messageFragment).commit();
                         return true;
-                    case R.id.profile:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
+                    case R.id.feed:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, feedFragment).commit();
                         return true;
                     case R.id.notification:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, notificationFragment).commit();
                         return true;
-                    case R.id.setting:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, settingFragment).commit();
+                    case R.id.profession:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
                         return true;
                 }
                 return false;

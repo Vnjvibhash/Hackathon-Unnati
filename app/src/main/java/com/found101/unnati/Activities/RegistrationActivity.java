@@ -18,7 +18,7 @@ public class RegistrationActivity extends AppCompatActivity {
     Button send_otp;
     EditText contact_number,username,name;
     UserModel userModel;
-    String user,email,pass,generatedOtp;
+    String user,email,pass,generatedOtp, role;
     private FirebaseDatabase database;
     private DatabaseReference mDatabase;
 
@@ -37,6 +37,7 @@ public class RegistrationActivity extends AppCompatActivity {
         mDatabase=database.getReference("Users");
 
         user=getIntent().getStringExtra("user");
+        role=getIntent().getStringExtra("Role");
         email=getIntent().getStringExtra("email");
         pass=getIntent().getStringExtra("pass");
 
@@ -48,10 +49,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
         send_otp.setOnClickListener(v -> {
             if (!username.getText().toString().isEmpty() && !name.getText().toString().isEmpty() && contact_number.getText().toString().trim().length() == 10) {
-                userModel=new UserModel(email,pass,username.getText().toString().trim(),name.getText().toString().trim(),contact_number.getText().toString().trim(),Integer.valueOf(generatedOtp));
-                mDatabase.child(user).setValue(userModel);
                 Intent intent = new Intent(this, Registration2Activity.class);
                 intent.putExtra("user", user);
+                intent.putExtra("Role", role);
                 intent.putExtra("email", email);
                 intent.putExtra("pass", pass);
                 intent.putExtra("username", username.getText().toString().trim());

@@ -1,12 +1,20 @@
 package com.found101.unnati.Models;
 
-public class UserModel {
-    String profession,userPassword,address,role,idProof,userMobile,proofType,name,otp,userEmail,userName;
+public class Users {
+    String profession;
+    long userPassword;
+    String address;
+    int role;
+    long idProof;
+    long userMobile;
+    String proofType, name;
+    int otp;
+    String userEmail, userName;
 
-    public UserModel() {
+    public Users() {
     }
 
-    public UserModel(String profession, String userPassword, String address, String role, String idProof, String userMobile, String proofType, String name, String otp, String userEmail, String userName) {
+    public Users(String profession, long userPassword, String address, int role, long idProof, long userMobile, String proofType, String name, int otp, String userEmail, String userName) {
         this.profession = profession;
         this.userPassword = userPassword;
         this.address = address;
@@ -28,11 +36,11 @@ public class UserModel {
         this.profession = profession;
     }
 
-    public String getUserPassword() {
+    public long getUserPassword() {
         return userPassword;
     }
 
-    public void setUserPassword(String userPassword) {
+    public void setUserPassword(long userPassword) {
         this.userPassword = userPassword;
     }
 
@@ -44,27 +52,27 @@ public class UserModel {
         this.address = address;
     }
 
-    public String getRole() {
+    public int getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(int role) {
         this.role = role;
     }
 
-    public String getIdProof() {
+    public long getIdProof() {
         return idProof;
     }
 
-    public void setIdProof(String idProof) {
+    public void setIdProof(long idProof) {
         this.idProof = idProof;
     }
 
-    public String getUserMobile() {
+    public long getUserMobile() {
         return userMobile;
     }
 
-    public void setUserMobile(String userMobile) {
+    public void setUserMobile(long userMobile) {
         this.userMobile = userMobile;
     }
 
@@ -84,11 +92,11 @@ public class UserModel {
         this.name = name;
     }
 
-    public String getOtp() {
+    public int getOtp() {
         return otp;
     }
 
-    public void setOtp(String otp) {
+    public void setOtp(int otp) {
         this.otp = otp;
     }
 

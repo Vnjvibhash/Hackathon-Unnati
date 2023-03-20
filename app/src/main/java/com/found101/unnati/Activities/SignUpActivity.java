@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignUpActivity extends AppCompatActivity {
     Button register;
     EditText email,password;
+    String role;
     UserModel userModel;
     private FirebaseDatabase database;
     private DatabaseReference mDatabase;
@@ -34,6 +35,8 @@ public class SignUpActivity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
 
+        role=getIntent().getStringExtra("Role");
+
         database = FirebaseDatabase.getInstance();
         mDatabase=database.getReference("Users");
 
@@ -45,11 +48,11 @@ public class SignUpActivity extends AppCompatActivity {
             if (!emailToText.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailToText).matches()) {
                 String CurrentString = emailToText;
                 String[] separated = CurrentString.split("@");
-                userModel=new UserModel(emailToText,password.getText().toString());
                 mDatabase.child(separated[0]).setValue(userModel);
                 Intent intent= new Intent(this,RegistrationActivity.class);
                 intent.putExtra("user",separated[0]);
                 intent.putExtra("email",emailToText);
+                intent.putExtra("Role",role);
                 intent.putExtra("pass",password.getText().toString());
                 startActivity(intent);
                 finish();

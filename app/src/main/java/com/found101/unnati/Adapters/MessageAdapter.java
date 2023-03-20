@@ -33,6 +33,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MessageAdapter.MyViewHolder holder, int position) {
         holder.chat.setOnClickListener(v->{
             Intent intent = new Intent(context, ChatActivity.class);
+
             ;
         });
     }

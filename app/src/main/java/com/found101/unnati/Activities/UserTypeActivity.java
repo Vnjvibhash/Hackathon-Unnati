@@ -10,6 +10,7 @@ import com.found101.unnati.R;
 
 public class UserTypeActivity extends AppCompatActivity {
     Button btnInvestor,btnEntrepreneur;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,12 +21,15 @@ public class UserTypeActivity extends AppCompatActivity {
 
         btnInvestor.setOnClickListener(v->{
             Intent intent=new Intent(this,SignUpActivity.class);
+            intent.putExtra("Role","3");
             startActivity(intent);
         });
 
         btnEntrepreneur.setOnClickListener(v->{
             Intent intent=new Intent(this,SignUpActivity.class);
+            intent.putExtra("Role","4");
             startActivity(intent);
         });
+
     }
 }

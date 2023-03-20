@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Registration2Activity extends AppCompatActivity {
     Button verify_otp;
     EditText contact, editOtp;
-    String enteredOtp, user, pass, email, contactNumber, username, name, otp;
+    String enteredOtp, user, pass, email, contactNumber, username, name, otp, role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class Registration2Activity extends AppCompatActivity {
         contactNumber = getIntent().getStringExtra("contact");
         user = getIntent().getStringExtra("user");
         email = getIntent().getStringExtra("email");
+        role = getIntent().getStringExtra("Role");
         pass = getIntent().getStringExtra("pass");
         username = getIntent().getStringExtra("username");
         otp = getIntent().getStringExtra("otp");
@@ -58,6 +59,7 @@ public class Registration2Activity extends AppCompatActivity {
                 intent.putExtra("contact", contactNumber);
                 intent.putExtra("user", user);
                 intent.putExtra("email", email);
+                intent.putExtra("Role", role);
                 intent.putExtra("pass", pass);
                 intent.putExtra("username", username);
                 intent.putExtra("otp", otp);
@@ -67,31 +69,6 @@ public class Registration2Activity extends AppCompatActivity {
                 Toast.makeText(this, "Wrong OTP", Toast.LENGTH_SHORT).show();
             }
             Log.d("UserData", enteredOtp);
-//            try {
-//                query = mDatabase.orderByChild(enteredOtp).equalTo(enteredOtp);
-//                query.addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                        if (snapshot.exists()) {
-//                            String otpFromDb = snapshot.child(user).child("otp").getValue(String.class);
-//                            if (otpFromDb.equals(enteredOtp)) {
-//                                Toast.makeText(Registration2Activity.this, "User Verified", Toast.LENGTH_SHORT).show();
-//                            } else {
-//                                Toast.makeText(Registration2Activity.this, "User Not Verified", Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//                        Log.e("UserData",error.getMessage());
-//                    }
-//                });
-//            } catch (Exception e) {
-//                Log.d("UserData", e.getMessage());
-//            }
-
         });
 
     }
