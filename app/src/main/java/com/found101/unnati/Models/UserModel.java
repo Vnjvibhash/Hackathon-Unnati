@@ -1,7 +1,7 @@
 package com.found101.unnati.Models;
 
 public class UserModel {
-    String userEmail,userPassword,userName,name,userMobile,email,role,profession,address,proofType,idProof,imgIdProof;
+    String userEmail,userPassword,userName,name,userMobile,role,profession,address,proofType,idProof,imgIdProof;
     int otp;
 
     public UserModel(String userEmail, String userPassword) {
@@ -17,14 +17,20 @@ public class UserModel {
         this.otp=otp;
     }
 
-//    public UserModel(String role, String profession, String address, String proofType, String idProof, String imgIdProof) {
-//        this.role = role;
-//        this.profession = profession;
-//        this.address = address;
-//        this.proofType = proofType;
-//        this.idProof = idProof;
-//        this.imgIdProof = imgIdProof;
-//    }
+    public UserModel(String userEmail, String userPassword, String userName, String name, String userMobile, String profession, String address, String proofType, String idProof, int otp) {
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+        this.userName = userName;
+        this.name = name;
+        this.userMobile = userMobile;
+        this.role = role;
+        this.profession = profession;
+        this.address = address;
+        this.proofType = proofType;
+        this.idProof = idProof;
+        this.imgIdProof = imgIdProof;
+        this.otp = otp;
+    }
 
     public String getUserEmail() {
         return userEmail;
@@ -64,14 +70,6 @@ public class UserModel {
 
     public void setUserMobile(String userMobile) {
         this.userMobile = userMobile;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getRole() {

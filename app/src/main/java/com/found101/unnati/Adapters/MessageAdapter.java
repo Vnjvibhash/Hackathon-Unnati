@@ -1,6 +1,7 @@
 package com.found101.unnati.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.found101.unnati.Activities.ChatActivity;
 import com.found101.unnati.R;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHolder>{
@@ -30,7 +32,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MessageAdapter.MyViewHolder holder, int position) {
         holder.chat.setOnClickListener(v->{
-
+            Intent intent = new Intent(context, ChatActivity.class);
+            ;
         });
     }
 

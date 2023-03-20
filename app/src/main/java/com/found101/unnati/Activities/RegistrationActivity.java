@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationActivity extends AppCompatActivity {
     Button send_otp;
-    EditText contact_number,username,location;
+    EditText contact_number,username,name;
     UserModel userModel;
     String user,email,pass,generatedOtp;
     private FirebaseDatabase database;
@@ -41,21 +41,21 @@ public class RegistrationActivity extends AppCompatActivity {
         pass=getIntent().getStringExtra("pass");
 
         username = findViewById(R.id.username);
-        location = findViewById(R.id.location);
+        name = findViewById(R.id.name);
         contact_number = findViewById(R.id.contact_number);
         send_otp = findViewById(R.id.send_otp);
         generatedOtp=generateOTP();
 
         send_otp.setOnClickListener(v -> {
-            if (!username.getText().toString().isEmpty() && !location.getText().toString().isEmpty() && contact_number.getText().toString().trim().length() == 10) {
-                userModel=new UserModel(email,pass,username.getText().toString().trim(),location.getText().toString().trim(),contact_number.getText().toString().trim(),Integer.valueOf(generatedOtp));
+            if (!username.getText().toString().isEmpty() && !name.getText().toString().isEmpty() && contact_number.getText().toString().trim().length() == 10) {
+                userModel=new UserModel(email,pass,username.getText().toString().trim(),name.getText().toString().trim(),contact_number.getText().toString().trim(),Integer.valueOf(generatedOtp));
                 mDatabase.child(user).setValue(userModel);
                 Intent intent = new Intent(this, Registration2Activity.class);
                 intent.putExtra("user", user);
                 intent.putExtra("email", email);
                 intent.putExtra("pass", pass);
                 intent.putExtra("username", username.getText().toString().trim());
-                intent.putExtra("location", location.getText().toString().trim());
+                intent.putExtra("name", name.getText().toString().trim());
                 intent.putExtra("otp", generatedOtp);
                 intent.putExtra("contact", contact_number.getText().toString().trim());
                 startActivity(intent);

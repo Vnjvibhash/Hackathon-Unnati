@@ -23,10 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Registration2Activity extends AppCompatActivity {
     Button verify_otp;
     EditText contact, editOtp;
-    String enteredOtp, user, pass, email, contactNumber, username, location, otp;
-    private FirebaseDatabase database;
-    private DatabaseReference mDatabase;
-    private Query query;
+    String enteredOtp, user, pass, email, contactNumber, username, name, otp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +36,6 @@ public class Registration2Activity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
 
-        database = FirebaseDatabase.getInstance();
-        mDatabase = database.getReference("Users");
-
         contact = findViewById(R.id.contact_number);
         editOtp = findViewById(R.id.editOtp);
         contactNumber = getIntent().getStringExtra("contact");
@@ -50,10 +44,8 @@ public class Registration2Activity extends AppCompatActivity {
         pass = getIntent().getStringExtra("pass");
         username = getIntent().getStringExtra("username");
         otp = getIntent().getStringExtra("otp");
-        location = getIntent().getStringExtra("location");
+        name = getIntent().getStringExtra("name");
         contact.setText(contactNumber);
-        contact.setEnabled(false);
-
         Log.d("UserData", otp);
         Log.d("UserData", user);
 
@@ -61,33 +53,45 @@ public class Registration2Activity extends AppCompatActivity {
         verify_otp = findViewById(R.id.verify_otp);
         verify_otp.setOnClickListener(v -> {
             enteredOtp = editOtp.getText().toString().trim();
-            Log.d("UserData", enteredOtp);
-            try {
-                query = mDatabase.orderByChild(enteredOtp).equalTo(enteredOtp);
-                query.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-                            String otpFromDb = snapshot.child(user).child("otp").getValue(String.class);
-                            if (otpFromDb.equals(enteredOtp)) {
-                                Toast.makeText(Registration2Activity.this, "User Verified", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(Registration2Activity.this, "User Not Verified", Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Log.e("UserData",error.getMessage());
-                    }
-                });
-            } catch (Exception e) {
-                Log.d("UserData", e.getMessage());
+            if(enteredOtp.equals(otp)){
+                Intent intent = new Intent(this, Registration3Activity.class);
+                intent.putExtra("contact", contactNumber);
+                intent.putExtra("user", user);
+                intent.putExtra("email", email);
+                intent.putExtra("pass", pass);
+                intent.putExtra("username", username);
+                intent.putExtra("otp", otp);
+                intent.putExtra("name", name);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Wrong OTP", Toast.LENGTH_SHORT).show();
             }
-//            Intent intent = new Intent(this, Registration3Activity.class);
-//            startActivity(intent);
+            Log.d("UserData", enteredOtp);
+//            try {
+//                query = mDatabase.orderByChild(enteredOtp).equalTo(enteredOtp);
+//                query.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        if (snapshot.exists()) {
+//                            String otpFromDb = snapshot.child(user).child("otp").getValue(String.class);
+//                            if (otpFromDb.equals(enteredOtp)) {
+//                                Toast.makeText(Registration2Activity.this, "User Verified", Toast.LENGTH_SHORT).show();
+//                            } else {
+//                                Toast.makeText(Registration2Activity.this, "User Not Verified", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//                        Log.e("UserData",error.getMessage());
+//                    }
+//                });
+//            } catch (Exception e) {
+//                Log.d("UserData", e.getMessage());
+//            }
+
         });
 
     }
