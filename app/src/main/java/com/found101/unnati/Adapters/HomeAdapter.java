@@ -6,8 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.found101.unnati.Fragments.BusinessDetailsFragment;
 import com.found101.unnati.R;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
@@ -26,7 +32,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull HomeAdapter.MyViewHolder holder, int position) {
-
+holder.pitch_id.setOnClickListener(v->{
+    BusinessDetailsFragment serviceInnerListFragment = new BusinessDetailsFragment();
+    FragmentManager fragmentManager = ((FragmentActivity)context).getSupportFragmentManager();
+    FragmentTransaction ft = fragmentManager.beginTransaction();
+    ft.replace(R.id.container, serviceInnerListFragment).commit();
+});
     }
 
     @Override
@@ -35,8 +46,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
+        CardView pitch_id;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            pitch_id=itemView.findViewById(R.id.pitch_id);
         }
     }
 }

@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        role=getIntent().getStringExtra("Role");
+        role = getIntent().getStringExtra("Role");
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 

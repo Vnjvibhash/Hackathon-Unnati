@@ -6,6 +6,7 @@
     android:layout_marginTop="16dp"
     android:layout_marginHorizontal="16dp"
     app:cardCornerRadius="12dp"
+    android:id="@+id/pitch_id"
     android:elevation="4dp">
 
         <LinearLayout
@@ -54,7 +55,7 @@
                     android:drawableTint="@color/red"
                     android:drawableStart="@drawable/ic_favorite"
                     android:textSize="20sp"
-                    android:text="2.2k"/>
+                    android:text="1.2k"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="28dp"
@@ -62,7 +63,7 @@
                     android:drawableTint="@color/purple_700"
                     android:drawableStart="@drawable/ic_password"
                     android:textSize="20sp"
-                    android:text="1.2k"/>
+                    android:text="2.2k"/>
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="28dp"

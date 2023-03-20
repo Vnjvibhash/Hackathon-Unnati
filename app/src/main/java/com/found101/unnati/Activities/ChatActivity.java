@@ -110,4 +110,9 @@ public class ChatActivity extends AppCompatActivity {
         });
 
     }
+    @Override
+    public void onBackPressed() {
+        // do something on back.
+        super.onBackPressed();
+    }
 }

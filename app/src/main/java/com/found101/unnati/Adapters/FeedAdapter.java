@@ -28,7 +28,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull FeedAdapter.MyViewHolder holder, int position) {
-        Picasso.get().load(R.drawable.startup3).into(holder.pitch_img);
+        Picasso.get().load(R.drawable.startup2).into(holder.pitch_img);
     }
 
     @Override
