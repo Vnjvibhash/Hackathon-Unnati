@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.notification:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, notificationFragment).commit();
                         return true;
-                    case R.id.profession:
+                    case R.id.profile:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
                         return true;
                 }

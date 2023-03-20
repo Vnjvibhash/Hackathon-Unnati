@@ -3,19 +3,34 @@ package com.found101.unnati.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.found101.unnati.Adapters.HomeAdapter;
 import com.found101.unnati.R;
 
 public class FeedFragment extends Fragment {
+    View view;
 
+    RecyclerView feed_recycler;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feed, container, false);
+        view = inflater.inflate(R.layout.fragment_feed, container, false);
+
+        feed_recycler=view.findViewById(R.id.feed_recycler);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        feed_recycler.setLayoutManager(linearLayoutManager);
+
+        HomeAdapter messageAdapter=new HomeAdapter(getContext());
+        feed_recycler.setAdapter(messageAdapter);
+
+        return view;
     }
 }

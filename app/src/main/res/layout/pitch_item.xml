@@ -14,6 +14,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/pitch_img"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:src="@drawable/startup1"
@@ -67,8 +68,8 @@
                     android:layout_height="28dp"
                     android:layout_weight="0.5"
                     android:src="@drawable/ic_share"
-                    android:tint="@color/primary_theme_lite"
-                    android:gravity="end"/>
+                    android:gravity="end"
+                    app:tint="@color/primary_theme_lite" />
             </LinearLayout>
         </LinearLayout>
 
