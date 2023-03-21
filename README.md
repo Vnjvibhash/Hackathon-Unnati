@@ -12,22 +12,22 @@ Our tagline is, "Development through investment"
 
 This app helps you regester a new user or an investor but due to some bugs we have to depend on the pre made profiles for the timebeing.
 
-Hence, for login as a 
-1)Enterprenaur- 
-username-user 
-password-password
+Hence, for login as a  </br>
+1)Enterprenaur- </br>
+username-user </br>
+password-password</br>
 
-2)Investor- 
-username-2)investor 
-password-password
+2)Investor- </br>
+username-2)investor </br>
+password-password</br>
 
-3)Financial Advisor- 
-username-finance 
-password-password
+3)Financial Advisor- </br>
+username-finance </br>
+password-password</br>
 
-4)Mentor- 
-username-mentor 
-password-password
+4)Mentor- </br>
+username-mentor </br>
+password-password</br>
 
 
 
