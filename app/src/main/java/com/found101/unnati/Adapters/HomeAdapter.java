@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.found101.unnati.Fragments.BusinessDetailsFragment;
+import com.found101.unnati.Fragments.ExistingBusinessFragment;
 import com.found101.unnati.R;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{

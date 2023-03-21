@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Unnati"
         tools:targetApi="31">
         <activity
+            android:name=".ExistingBusinessActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.CreatPostActivity"
             android:exported="false">
             <meta-data

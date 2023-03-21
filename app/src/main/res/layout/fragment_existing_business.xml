@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.BusinessDetailsFragment">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".Fragments.ExistingBusinessFragment">
+
+
     <LinearLayout
-        android:id="@+id/investor_kam"
+        android:id="@+id/user_work"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -17,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pitch details"
+            android:text="Fill your business details"
             android:textStyle="bold"
             android:textSize="24dp"
             android:gravity="center"
@@ -32,13 +30,13 @@
             android:textSize="18dp"
             />
 
-        <TextView
-            android:id="@+id/name_i1"
+        <EditText
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edittext_border"
-            android:text="List the key partnerships your business leverages or relies upon for success. Include the resources or value your business gets from these partnerships."
+            android:inputType="text"
             android:padding="8dp"
             android:textSize="20sp"
             android:layout_marginHorizontal="24dp"/>
@@ -53,13 +51,13 @@
 
             />
 
-        <TextView
-            android:id="@+id/domain_i1"
+        <EditText
+            android:id="@+id/domain"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edittext_border"
-            android:text="Leverages or relies upon for success. Include the resources or value your business gets from these partnerships."
+            android:inputType="text"
             android:padding="8dp"
             android:textSize="20sp"
             android:layout_marginHorizontal="24dp"/>
@@ -73,13 +71,13 @@
             android:textSize="18dp"
             />
 
-        <TextView
-            android:id="@+id/description_i1"
+        <EditText
+            android:id="@+id/descr"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edittext_border"
-            android:text="List the key resources your business relies upon or uses in order to operate and provide services."
+            android:inputType="text"
             android:padding="8dp"
             android:textSize="20sp"
             android:layout_marginHorizontal="24dp"/>
@@ -93,13 +91,13 @@
             android:textSize="18dp"
             />
 
-        <TextView
-            android:id="@+id/expectation_i1"
+        <EditText
+            android:id="@+id/exp"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edittext_border"
-            android:text="Upon or uses in order to operate and provide services."
+            android:inputType="text"
             android:padding="8dp"
             android:textSize="20sp"
             android:layout_marginHorizontal="24dp"/>
@@ -111,13 +109,13 @@
             android:textSize="18dp"
             />
 
-        <TextView
-            android:id="@+id/name_i"
+        <EditText
+            android:id="@+id/nam"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edittext_border"
-            android:text="List the key partnerships your business leverages or relies upon for success. Include the resources or value your business gets from these partnerships."
+            android:inputType="text"
             android:padding="8dp"
             android:textSize="20sp"
             android:layout_marginHorizontal="24dp"/>
@@ -132,13 +130,13 @@
 
             />
 
-        <TextView
-            android:id="@+id/domain_i"
+        <EditText
+            android:id="@+id/dom"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edittext_border"
-            android:text="Leverages or relies upon for success. Include the resources or value your business gets from these partnerships."
+            android:inputType="text"
             android:padding="8dp"
             android:textSize="20sp"
             android:layout_marginHorizontal="24dp"/>
@@ -152,13 +150,13 @@
             android:textSize="18dp"
             />
 
-        <TextView
-            android:id="@+id/description_1"
+        <EditText
+            android:id="@+id/desc"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edittext_border"
-            android:text="List the key resources your business relies upon or uses in order to operate and provide services."
+            android:inputType="text"
             android:padding="8dp"
             android:textSize="20sp"
             android:layout_marginHorizontal="24dp"/>
@@ -172,32 +170,106 @@
             android:textSize="18dp"
             />
 
-        <TextView
-            android:id="@+id/expectation_i"
+        <EditText
+            android:id="@+id/expecta"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edittext_border"
-            android:text="Upon or uses in order to operate and provide services."
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="24dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Key Partners:"
+            android:layout_marginLeft="16dp"
+            android:textSize="18dp"
+            />
+
+        <EditText
+            android:id="@+id/na"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/edittext_border"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="24dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Key Activities:"
+            android:layout_marginLeft="16dp"
+            android:textSize="18dp"
+
+            />
+
+        <EditText
+            android:id="@+id/doma"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/edittext_border"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="24dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Key Resources:"
+            android:layout_marginLeft="16dp"
+            android:textSize="18dp"
+            />
+
+        <EditText
+            android:id="@+id/descriptn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/edittext_border"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="24dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Key Propositions:"
+            android:layout_marginLeft="16dp"
+            android:textSize="18dp"
+            />
+
+        <EditText
+            android:id="@+id/expectat"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/edittext_border"
+            android:inputType="text"
             android:padding="8dp"
             android:textSize="20sp"
             android:layout_marginHorizontal="24dp"/>
 
         <Button
-            android:id="@+id/chat"
+            android:id="@+id/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chat here"
-            android:paddingHorizontal="12dp"
-            android:textAllCaps="false"
+            android:text="Submit"
             android:background="@drawable/rounded_button"
             android:layout_gravity="center"
             />
 
 
     </LinearLayout>
-</LinearLayout>
 
-
-
-</ScrollView>
+</FrameLayout>
