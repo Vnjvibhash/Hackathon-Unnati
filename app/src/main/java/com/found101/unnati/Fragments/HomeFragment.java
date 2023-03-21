@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
         pitch_recycler2.setAdapter(messageAdapter);
 
         session = new Session(getContext());
-        if (session.getRole() == "4") {
+        if (session.getRole().equals("4")) {
             home_view2.setVisibility(View.VISIBLE);
             home_view1.setVisibility(View.GONE);
         } else {
@@ -73,6 +73,9 @@ public class HomeFragment extends Fragment {
                 public void onClick(View v) {
                     popupWindow.dismiss();
                     MessageFragment messageFragment = new MessageFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("Title","Select Your Mentor");
+                    messageFragment.setArguments(bundle);
                     getFragmentManager().beginTransaction()
                             .replace(R.id.container, messageFragment)
                             .addToBackStack(null)
@@ -84,6 +87,9 @@ public class HomeFragment extends Fragment {
                 public void onClick(View v) {
                     popupWindow.dismiss();
                     MessageFragment messageFragment = new MessageFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("Title","Select Your FA");
+                    messageFragment.setArguments(bundle);
                     getFragmentManager().beginTransaction()
                             .replace(R.id.container, messageFragment)
                             .addToBackStack(null)

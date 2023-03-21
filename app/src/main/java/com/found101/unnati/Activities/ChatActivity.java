@@ -4,15 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.found101.unnati.Adapters.ChatAdapter;
+import com.found101.unnati.Fragments.MessageFragment;
 import com.found101.unnati.Models.ChatModel;
 import com.found101.unnati.R;
+import com.found101.unnati.Utils.Session;
 
 import java.sql.Time;
 import java.text.SimpleDateFormat;
@@ -24,12 +34,14 @@ import java.util.Locale;
 public class ChatActivity extends AppCompatActivity {
 
     String currentTime;
-    List<ChatModel> messageChatModelList =  new ArrayList<>();
+    List<ChatModel> messageChatModelList = new ArrayList<>();
     RecyclerView recyclerView;
-    ChatAdapter adapter ;
+    ChatAdapter adapter;
 
     EditText messageET;
-    ImageView sendBtn,back;
+    ImageView sendBtn, back, action;
+    TextView continue_btn;
+    Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +54,15 @@ public class ChatActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
+        session = new Session(this);
 
+        continue_btn = findViewById(R.id.continue_btn);
+        action = findViewById(R.id.action);
         messageET = findViewById(R.id.messageET);
         sendBtn = (ImageView) findViewById(R.id.sendBtn);
         back = findViewById(R.id.back);
 
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager manager = new LinearLayoutManager(ChatActivity.this, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
@@ -72,6 +87,13 @@ public class ChatActivity extends AppCompatActivity {
                 1
         );
 
+        if (session.getRole().equals("4")) {
+            continue_btn.setVisibility(View.VISIBLE);
+        }
+        continue_btn.setOnClickListener(v -> {
+            Intent intent = new Intent(ChatActivity.this, DetailsPitchActivity.class);
+            startActivity(intent);
+        });
 
         messageChatModelList.add(model1);
         messageChatModelList.add(model2);
@@ -87,9 +109,8 @@ public class ChatActivity extends AppCompatActivity {
         messageChatModelList.add(model4);
 
         recyclerView.smoothScrollToPosition(messageChatModelList.size());
-        adapter = new ChatAdapter(messageChatModelList, ChatActivity.this );
+        adapter = new ChatAdapter(messageChatModelList, ChatActivity.this);
         recyclerView.setAdapter(adapter);
-
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,19 +126,17 @@ public class ChatActivity extends AppCompatActivity {
                 recyclerView.smoothScrollToPosition(messageChatModelList.size());
                 adapter.notifyDataSetChanged();
                 messageET.setText("");
-
-
             }
         });
 
-        back.setOnClickListener(v->{
+        back.setOnClickListener(v -> {
             onBackPressed();
         });
 
     }
+
     @Override
     public void onBackPressed() {
-        // do something on back.
         super.onBackPressed();
     }
 }

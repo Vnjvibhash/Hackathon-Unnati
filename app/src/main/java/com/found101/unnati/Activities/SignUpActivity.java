@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.found101.unnati.Models.UserModel;
@@ -19,10 +23,12 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignUpActivity extends AppCompatActivity {
     Button register;
     EditText email,password;
+    TextView sign_in;
     String role;
     UserModel userModel;
     private FirebaseDatabase database;
     private DatabaseReference mDatabase;
+    ImageView passwordToggleImageView, passwordImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +47,31 @@ public class SignUpActivity extends AppCompatActivity {
         mDatabase=database.getReference("Users");
 
         register= findViewById(R.id.register);
+        sign_in= findViewById(R.id.sign_in);
         email= findViewById(R.id.email);
         password= findViewById(R.id.password);
+        passwordToggleImageView = findViewById(R.id.passwordToggleImageView);
+        passwordImageView = findViewById(R.id.passwordImageView);
+        passwordToggleImageView.setOnClickListener(v -> {
+            passwordToggleImageView.setVisibility(View.GONE);
+            passwordImageView.setVisibility(View.VISIBLE);
+            if (password.getTransformationMethod() instanceof PasswordTransformationMethod) {
+                password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            } else {
+                password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+            password.setSelection(password.getText().length());
+        });
+        passwordImageView.setOnClickListener(v -> {
+            passwordImageView.setVisibility(View.GONE);
+            passwordToggleImageView.setVisibility(View.VISIBLE);
+            if (password.getTransformationMethod() instanceof PasswordTransformationMethod) {
+                password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            } else {
+                password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+            password.setSelection(password.getText().length());
+        });
         register.setOnClickListener(v->{
             String emailToText = email.getText().toString();
             if (!emailToText.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailToText).matches()) {
@@ -61,6 +90,11 @@ public class SignUpActivity extends AppCompatActivity {
                 email.setError("Email format is invalid");
                 Toast.makeText(this, "Enter valid Email address !", Toast.LENGTH_SHORT).show();
             }
+        });
+        sign_in.setOnClickListener(v->{
+            Intent intent= new Intent(this,LoginActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 }

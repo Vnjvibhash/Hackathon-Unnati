@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.found101.unnati.R;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.MyViewHolder>{
@@ -28,7 +29,17 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull FeedAdapter.MyViewHolder holder, int position) {
-        Picasso.get().load(R.drawable.startup2).into(holder.pitch_img);
+        Picasso.get().load(R.drawable.startup5).into(holder.pitch_img, new Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError(Exception e) {
+
+            }
+        });;
     }
 
     @Override

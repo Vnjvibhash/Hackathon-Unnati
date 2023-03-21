@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.found101.unnati.Fragments.FeedFragment;
@@ -13,6 +14,7 @@ import com.found101.unnati.Fragments.NotificationFragment;
 import com.found101.unnati.Fragments.ProfileFragment;
 import com.found101.unnati.Fragments.SettingFragment;
 import com.found101.unnati.R;
+import com.found101.unnati.Utils.Session;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     String role;
+    Session session;
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment = new HomeFragment();
     MessageFragment messageFragment = new MessageFragment();
@@ -32,12 +35,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        role = getIntent().getStringExtra("Role");
-
+        session = new Session(this);
+        role = getIntent().getStringExtra("Role") != null ? getIntent().getStringExtra("Role") : session.getRole();
+        Log.d("RoleID",role);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+        if (role.equals("1")){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, messageFragment).commit();
+        }else if(role.equals("2")) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, messageFragment).commit();
+        } else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+        }
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -47,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
                         return true;
                     case R.id.message:
+                        Bundle bundle=new Bundle();
+                        bundle.putString("Title","All Message");
+                        messageFragment.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, messageFragment).commit();
                         return true;
                     case R.id.feed:
