@@ -48,7 +48,6 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 app_name.setText("उन्नति");
-                app_name.setTextColor(R.color.primary_theme);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
