@@ -40,3 +40,11 @@ The default OTP (One Time Password) for the app has been set to 65879. Use this 
 
 
 
+
+## Screenshots
+
+![App Screenshot 1](https://user-images.githubusercontent.com/72401473/226522688-3ff0a47b-b7d4-4c6b-bd43-e0c144e59ca5.png)
+
+
+
+
