@@ -29,7 +29,7 @@ password-password
 username-mentor 
 password-password
 
-#Registering
+##Registering
 
 While registering when prompted to enter OTP use 65879 as the one time password.
 
