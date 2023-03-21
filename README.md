@@ -29,9 +29,14 @@ password-password
 username-mentor 
 password-password
 
-##Registering
 
-While registering when prompted to enter OTP use 65879 as the one time password.
+
+
+## FAQ
+
+#### What is the OTP?
+
+The default OTP (One Time Password for the app has been set to 65879. Use this while registering with the app.
 
 
 
