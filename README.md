@@ -36,7 +36,7 @@ password-password
 
 #### What is the OTP?
 
-The default OTP (One Time Password for the app has been set to 65879. Use this while registering with the app.
+The default OTP (One Time Password) for the app has been set to 65879. Use this while registering with the app.
 
 
 
