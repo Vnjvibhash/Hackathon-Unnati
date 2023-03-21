@@ -27,7 +27,7 @@ public class LogoutFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        actionBar.setTitle("Logout");
+        actionBar.hide();
         view = inflater.inflate(R.layout.fragment_logout, container, false);
         logout_yes = view.findViewById(R.id.logout_yes);
         logout_no = view.findViewById(R.id.logout_no);

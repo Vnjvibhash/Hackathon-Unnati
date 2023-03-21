@@ -1,26 +1,32 @@
 package com.found101.unnati.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 import com.found101.unnati.Adapters.HomeAdapter;
 import com.found101.unnati.Adapters.MessageAdapter;
 import com.found101.unnati.R;
 import com.found101.unnati.Utils.Session;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomeFragment extends Fragment {
     View view;
     Session session;
     RecyclerView pitch_recycler, pitch_recycler2;
     LinearLayout home_view1, home_view2;
+    FloatingActionButton floatingActionButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,6 +36,7 @@ public class HomeFragment extends Fragment {
 
         home_view1 = view.findViewById(R.id.home_view1);
         home_view2 = view.findViewById(R.id.home_view2);
+        floatingActionButton = view.findViewById(R.id.floatingActionButton);
 
         pitch_recycler = view.findViewById(R.id.pitch_recycler);
         pitch_recycler2 = view.findViewById(R.id.pitch_recycler2);
@@ -47,10 +54,44 @@ public class HomeFragment extends Fragment {
         if (session.getRole() == "4") {
             home_view2.setVisibility(View.VISIBLE);
             home_view1.setVisibility(View.GONE);
-        } else if (session.getRole() == "3") {
+        } else {
             home_view1.setVisibility(View.VISIBLE);
             home_view2.setVisibility(View.GONE);
         }
+        floatingActionButton.setOnClickListener(v->{
+            LayoutInflater inflater1 = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View view = inflater1.inflate(R.layout.business_model, null);
+
+            PopupWindow popupWindow = new PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
+            popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+            Button new_business = view.findViewById(R.id.new_business);
+            Button old_business = view.findViewById(R.id.old_business);
+
+            new_business.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupWindow.dismiss();
+                    MessageFragment messageFragment = new MessageFragment();
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.container, messageFragment)
+                            .addToBackStack(null)
+                            .commit();
+                }
+            });
+            old_business.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupWindow.dismiss();
+                    MessageFragment messageFragment = new MessageFragment();
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.container, messageFragment)
+                            .addToBackStack(null)
+                            .commit();
+                }
+            });
+        });
+
 
         return view;
     }
