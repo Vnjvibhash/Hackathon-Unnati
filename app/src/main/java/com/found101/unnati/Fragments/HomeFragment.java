@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     popupWindow.dismiss();
-                    MessageFragment messageFragment = new MessageFragment();
+                    FinancialFragment messageFragment = new FinancialFragment();
                     Bundle bundle = new Bundle();
                     bundle.putString("Title","Select Your FA");
                     messageFragment.setArguments(bundle);
