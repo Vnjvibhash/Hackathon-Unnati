@@ -1,35 +1,25 @@
 package com.found101.unnati.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.found101.unnati.Fragments.FeedFragment;
 import com.found101.unnati.Fragments.HomeFragment;
 import com.found101.unnati.Fragments.MessageFragment;
 import com.found101.unnati.Fragments.NotificationFragment;
 import com.found101.unnati.Fragments.ProfileFragment;
-import com.found101.unnati.Fragments.SettingFragment;
 import com.found101.unnati.R;
 import com.found101.unnati.Utils.Session;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     String role;
     Session session;
     BottomNavigationView bottomNavigationView;
-    HomeFragment homeFragment = new HomeFragment();
-    MessageFragment messageFragment = new MessageFragment();
-    FeedFragment feedFragment = new FeedFragment();
-    NotificationFragment notificationFragment = new NotificationFragment();
-    ProfileFragment profileFragment = new ProfileFragment();
-    SettingFragment settingFragment = new SettingFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,42 +27,47 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         session = new Session(this);
         role = getIntent().getStringExtra("Role") != null ? getIntent().getStringExtra("Role") : session.getRole();
-        Log.d("RoleID",role);
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         if (role.equals("1")){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, messageFragment).commit();
+            replaceFragment(new MessageFragment(), null);
         }else if(role.equals("2")) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, messageFragment).commit();
+            replaceFragment(new MessageFragment(), null);
         } else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+            replaceFragment(new HomeFragment(), null);
         }
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-                        return true;
-                    case R.id.message:
-                        Bundle bundle=new Bundle();
-                        bundle.putString("Title","All Message");
-                        messageFragment.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, messageFragment).commit();
-                        return true;
-                    case R.id.feed:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, feedFragment).commit();
-                        return true;
-                    case R.id.notification:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, notificationFragment).commit();
-                        return true;
-                    case R.id.profile:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
-                        return true;
-                }
-                return false;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.home) {
+                replaceFragment(new HomeFragment(), null);
+                return true;
+            } else if (id == R.id.message) {
+                Bundle bundle=new Bundle();
+                bundle.putString("Title","All Message");
+                replaceFragment(new MessageFragment(), bundle);
+                return true;
+            } else if (id == R.id.feed) {
+                replaceFragment(new FeedFragment(), null);
+                return true;
+            } else if (id == R.id.notification) {
+                replaceFragment(new NotificationFragment(), null);
+                return true;
+            } else if (id == R.id.profile) {
+                replaceFragment(new ProfileFragment(), null);
+                return true;
+            } else {
+                return super.onOptionsItemSelected(item);
             }
         });
+    }
+
+    private void replaceFragment(Fragment fragment, Bundle bundle) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        if(bundle!=null)
+            fragment.setArguments(bundle);
+        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.commit();
     }
 }

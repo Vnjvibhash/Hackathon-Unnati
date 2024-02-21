@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +45,7 @@ public class LogoutFragment extends Fragment {
 
         logout_no.setOnClickListener(v -> {
             getActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.bottom_navigation, new ProfileFragment()).addToBackStack(null)
+                    .replace(R.id.home, new ProfileFragment()).addToBackStack(null)
                     .commit();
         });
         return view;
